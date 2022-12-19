@@ -4,13 +4,13 @@ import axios from 'axios';
 const useFetch = (url) => {
   const [dataFetch, setDataFetch] = useState({
     data: null,
-    loading: true,
+    isLoading: true,
   });
   const getData = async () => {
     const { data } = await axios(url);
     setDataFetch({
       data,
-      loading: false,
+      isLoading: false,
     });
   };
   useEffect(() => {

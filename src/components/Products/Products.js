@@ -1,13 +1,22 @@
-import { Appbar } from 'react-native-paper';
+import {
+  Button, Card, Paragraph, Title,
+} from 'react-native-paper';
+import { styles } from '../../../AppStyles';
 
-const Products = () => {
+const Products = ({
+  title, image, description, price,
+}) => {
   return (
-    <Appbar.Header>
-    <Appbar.BackAction onPress={() => {}} />
-    <Appbar.Content title="Title" />
-    <Appbar.Action icon="calendar" onPress={() => {}} />
-    <Appbar.Action icon="magnify" onPress={() => {}} />
-  </Appbar.Header>
+    <Card mode='elevated' style={styles.card}>
+      <Card.Cover style={styles.image} source={{ uri: image }} />
+      <Card.Content>
+        <Title>{title}</Title>
+        <Paragraph>Price: ${price}</Paragraph>
+      </Card.Content>
+      <Card.Actions>
+        <Button>Detail Product</Button>
+      </Card.Actions>
+    </Card>
   );
 };
 
