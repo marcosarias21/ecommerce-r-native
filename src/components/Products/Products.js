@@ -8,7 +8,7 @@ const Products = ({
 }) => {
   return (
     <Card mode='elevated' style={styles.card}>
-      <Card.Cover style={styles.image} source={{ uri: image }} />
+      <Card.Cover resizeMode='contain' style={styles.image} source={{ uri: image }} />
       <Card.Content>
         <Title>{title}</Title>
         <Paragraph>Price: ${price}</Paragraph>

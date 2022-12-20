@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
     marginTop: 25,
   },
   image: {
-    backgroundSize: 'container',
+    backgroundColor: 'white',
   },
   price: {
     marginTop: 15,
@@ -18,5 +18,6 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: 'white',
   },
 });
