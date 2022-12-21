@@ -24,4 +24,9 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: 'white',
   },
+  productsButtonDetail: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
 });
