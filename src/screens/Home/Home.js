@@ -10,9 +10,7 @@ import useFetch from '../../hooks/useFetch';
 
 const Home = () => {
   const { category } = useSelector((state => state.category));
-  console.log(category);
   const { data, isLoading } = useFetch(`https://fakestoreapi.com/products/${category}`);
-  console.log(data);
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -23,7 +21,9 @@ const Home = () => {
     <ScrollView style={styles.container}>
      <Categories />
       { isLoading ? <Spinner />
-        : products?.map(product => <><Products key={product.id} {...product} /><Divider /></>)
+        : products?.map((product, index) => <>
+        <Products key={index} {...product} />
+        <Divider /></>)
       }
     </ScrollView>
   );

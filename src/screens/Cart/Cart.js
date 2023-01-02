@@ -1,20 +1,16 @@
-import React from 'react';
-import {
-  Button, Card, Paragraph, Title,
-} from 'react-native-paper';
+import { ScrollView } from 'react-native';
 import { useSelector } from 'react-redux';
-import { styles } from '../../../AppStyles';
 import { CartProduct } from '../../components/CartProduct';
 
 const Cart = () => {
-  const { products } = useSelector((state => state));
-  console.log(products);
+  const { items } = useSelector((state => state.products));
+  console.log(items);
   return (
-   <>
+   <ScrollView>
     {
-      products?.map(product => <CartProduct {...product} key={product.id} />)
+      items?.map((product, index) => <CartProduct {...product} key={product.id} index={index} />)
     }
-   </>
+   </ScrollView>
   );
 };
 
