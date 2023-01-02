@@ -22,7 +22,8 @@ const Products = ({
           <Paragraph>Price: ${price}</Paragraph>
         </Card.Content>
         <Card.Actions>
-          <ProductDetail hideModal={hideModal} description={description} visible={visible} />
+          <ProductDetail hideModal={hideModal} price={price} image={image}
+            title={title} description={description} visible={visible} />
           <Button style={{ marginTop: 30 }} onPress={showModal}> Detail Products </Button>
         </Card.Actions>
       </Provider>
