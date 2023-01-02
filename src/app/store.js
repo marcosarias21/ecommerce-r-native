@@ -8,6 +8,8 @@ export const store = configureStore({
     category: categorySlice,
     products: productSlice,
   },
+  devTools: true,
 });
 
+console.log(store);
 export default store;

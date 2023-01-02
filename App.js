@@ -21,7 +21,7 @@ const StackComponent = () => {
 };
 
 export const App = () => {
-  const { products } = useSelector((state => state));
+  const { items } = useSelector((state => state.products));
   return (
     <NavigationContainer>
       <Tab.Navigator>
@@ -46,7 +46,7 @@ export const App = () => {
             tabBarIcon: ({ color }) => (
               <MaterialCommunityIcons name="cart" color={color} size={26}/>
             ),
-            tabBarBadge: products.length || null,
+            tabBarBadge: items.length || null,
           }}
         />
       </Tab.Navigator>
