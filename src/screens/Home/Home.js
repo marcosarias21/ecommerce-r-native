@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { ScrollView } from 'react-native';
 import { Divider } from 'react-native-paper';
+import { useSelector } from 'react-redux';
 import { styles } from '../../../AppStyles';
 import { Categories } from '../../components/Categories';
 import { Products } from '../../components/Products';
@@ -8,27 +9,19 @@ import { Spinner } from '../../components/Spinner';
 import useFetch from '../../hooks/useFetch';
 
 const Home = () => {
-  const [products, setProducts] = useState([]);
-  const [category, setCategory] = useState();
+  const { category } = useSelector((state => state.category));
   console.log(category);
-  const { data, isLoading } = useFetch('https://fakestoreapi.com/products');
+  const { data, isLoading } = useFetch(`https://fakestoreapi.com/products/${category}`);
   console.log(data);
-  console.log(products);
-  const getDataFilter = () => {
-    const categoryFilterBy = data?.filter(product => product.category === category);
-    setProducts(categoryFilterBy);
-  };
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
     setProducts(data);
   }, [data]);
-  useEffect(() => {
-    getDataFilter();
-  }, [category]);
 
   return (
     <ScrollView style={styles.container}>
-     <Categories setCategory={setCategory} />
+     <Categories />
       { isLoading ? <Spinner />
         : products?.map(product => <><Products key={product.id} {...product} /><Divider /></>)
       }
