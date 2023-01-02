@@ -1,17 +1,26 @@
 export const categoryData = [{
+  id: 0,
+  name: 'All Products',
+  category: '',
+},
+{
   id: 1,
-  category: 'electronics',
+  name: 'Electronics',
+  category: 'category/electronics',
 },
 {
   id: 2,
-  category: 'jewelery',
+  name: 'Jewelery',
+  category: 'category/jewelery',
 },
 {
   id: 3,
-  category: "men's clothing",
+  name: 'Mens Clothing',
+  category: "category/men's clothing",
 },
 {
   id: 4,
-  category: "women's clothing",
+  name: 'Womens Clothing',
+  category: "category/women's clothing",
 },
 ];

@@ -1,10 +1,12 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { Provider } from 'react-redux';
+import { store } from './src/app/store';
 import { Home } from './src/screens/Home';
 
 const Stack = createNativeStackNavigator();
 
-const App = () => {
+export const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
@@ -14,4 +16,12 @@ const App = () => {
   );
 };
 
-export default App;
+const AppWrapper = () => {
+  return (
+    <Provider store={store}>
+      <App />
+    </Provider>
+  );
+};
+
+export default AppWrapper;
