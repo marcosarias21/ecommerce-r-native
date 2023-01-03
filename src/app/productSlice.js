@@ -12,7 +12,7 @@ export const productSlice = createSlice({
       state.items.push(action.payload);
     },
     deleteProduct: (state, action) => {
-      const newCart = state.items.filter((item) => item.title !== action.payload);
+      const newCart = state.items.filter((item, index) => index !== action.payload);
       state.items = newCart;
     },
   },

@@ -1,19 +1,13 @@
-import { useEffect, useState } from 'react';
 import { ScrollView, View } from 'react-native';
 import { Text } from 'react-native-paper';
 import { useSelector } from 'react-redux';
 import { styles } from '../../../AppStyles';
 import { CartProduct } from '../../components/CartProduct';
+import useReduce from '../../hooks/useReduce';
 
 const Cart = () => {
-  const [totalPay, setTotalPay] = useState([]);
   const { items } = useSelector((state => state.products));
-  useEffect(() => {
-    setTotalPay(items.reduce((previousValue, currentValue) => {
-      return previousValue + currentValue.price;
-    }, 0));
-    console.log(totalPay);
-  }, [items]);
+  const totalPay = useReduce([items]);
   return (
    <ScrollView style={styles.container}>
     {
