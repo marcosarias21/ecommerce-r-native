@@ -17,7 +17,7 @@ const CartProduct = ({
           <Paragraph>{price}</Paragraph>
         </Card.Content>
         <Card.Actions>
-          <Button onPress={() => dispatch(deleteProduct(title))}> Quit Product </Button>
+          <Button onPress={() => dispatch(deleteProduct(index))}> Quit Product </Button>
           <Button style={{ marginTop: 30 }}> Buy Products! </Button>
         </Card.Actions>
     </Card>
