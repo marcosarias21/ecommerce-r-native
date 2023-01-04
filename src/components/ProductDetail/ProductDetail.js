@@ -19,8 +19,8 @@ const ProductDetail = ({
       <Modal visible={visible} onDismiss={hideModal} contentContainerStyle={containerStyle}>
         <Text> {description} </Text>
         <View style={styles.productsButtonDetail}>
-        <Button onPress={hideModal}> ❌ </Button>
-        <Button onPress={handleProduct} mode='contained'> Add Cart </Button>
+          <Button onPress={hideModal}> Close </Button>
+          <Button onPress={handleProduct} mode='contained'> Add Cart ${price}</Button>
         </View>
       </Modal>
     </Portal>

@@ -14,8 +14,9 @@ const Cart = () => {
     {
       items?.map((product, index) => <CartProduct {...product} key={product.id} index={index} />)
     }
+    {items.length === 0 && <View><Text variant='headlineMedium'> Cart Empty </Text></View>}
     <View>
-      <Text variant='headlineMedium'>Total to pay: ${totalPay} </Text>
+      <Text variant='headlineSmall'>Total to pay: ${totalPay} </Text>
     </View>
    </Container>
   );
