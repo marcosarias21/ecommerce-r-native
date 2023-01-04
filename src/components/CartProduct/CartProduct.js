@@ -1,5 +1,5 @@
 import {
-  Button, Card, Paragraph, Title,
+  Button, Card, IconButton, MD3Colors, Paragraph, Title,
 } from 'react-native-paper';
 import { useDispatch } from 'react-redux';
 import { styles } from '../../../AppStyles';
@@ -14,11 +14,10 @@ const CartProduct = ({
         <Card.Cover resizeMode='contain' style={styles.image} source={{ uri: image }} />
         <Card.Content>
           <Title>{title}</Title>
-          <Paragraph>{price}</Paragraph>
         </Card.Content>
         <Card.Actions>
-          <Button onPress={() => dispatch(deleteProduct(index))}> Quit Product </Button>
-          <Button style={{ marginTop: 30 }}> Buy Products! </Button>
+          <IconButton onPress={() => dispatch(deleteProduct(index))} icon='delete' iconColor={MD3Colors.secondary50} mode='outlined'></IconButton>
+          <Button buttonColor={MD3Colors.error50} style={{ marginTop: 30 }}> Buy ${price}</Button>
         </Card.Actions>
     </Card>
   );
